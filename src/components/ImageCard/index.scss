@@ -1,0 +1,34 @@
+.image-card {
+  height: 100%;
+  position: relative;
+  padding: 0 10px;
+  flex: 1 0 33%;
+
+  &:hover img{
+    transform: scale(1.2);
+  }
+
+  &__background {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+
+    > img  {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 6s linear;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+    background-color: rgba(255,255,255,0.7);
+    padding: 15px 50px;
+  }
+}

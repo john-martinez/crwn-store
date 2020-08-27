@@ -1,0 +1,14 @@
+.homepage {
+  width: 100%;
+
+  &__row {
+    display: flex;
+    padding: 10px 0;
+    height: 300px;
+    width: 100%;
+
+    &--large {
+      height: 400px;
+    }
+  }
+}
