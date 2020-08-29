@@ -4,7 +4,7 @@ import './index.scss';
 
 const ImageCard = ({ imgUrl, title, linkUrl, history }) => {
   return (
-    <div className="image-card" onClick={ ()=>history.push(linkUrl) }>
+    <div className="image-card" onClick={ ()=>history.push( linkUrl ) }>
       <div className="image-card__background">
         <img 
           src={ imgUrl } 
