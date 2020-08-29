@@ -1,10 +1,10 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './index.scss';
 
-export default function ImageCard ({ imgUrl, title, linkUrl }) {
-  console.log(imgUrl)
+const ImageCard = ({ imgUrl, title, linkUrl, history }) => {
   return (
-    <div className="image-card">
+    <div className="image-card" onClick={ ()=>history.push(linkUrl) }>
       <div className="image-card__background">
         <img 
           src={ imgUrl } 
@@ -18,3 +18,5 @@ export default function ImageCard ({ imgUrl, title, linkUrl }) {
     </div>
   );
 }
+
+export default withRouter(ImageCard);

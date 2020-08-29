@@ -4,7 +4,6 @@ import ImageCard from '../../components/ImageCard';
 import './index.scss';
 
 export default function HomePage() {
-  console.log(data.slice(0,3));
   return (
     <main className="homepage">
       <div className="homepage__row">
