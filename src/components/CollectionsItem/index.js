@@ -3,7 +3,7 @@ import './index.scss';
 
 export default function Collectionsitem({ item }) {
   const { imageUrl, name, price } = item;
-  console.log(item);
+
   return (
     <div className="collections-item">
       <div className="collections-item__image">

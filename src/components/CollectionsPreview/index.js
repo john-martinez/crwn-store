@@ -5,13 +5,16 @@ import './index.scss';
 
 export default function CollectionsPreview({ data }) {
   const { title, items, routeName } = data;
-  console.log(routeName);
+
   return (
     <div className="collections-preview">
       <h2>
-        <Link to={ routeName }> { title } </Link>
+        <Link to={`/shop/${routeName}`}> { title } </Link>
       </h2>
-      <CollectionsItemList items={ items } />
+      <CollectionsItemList 
+        items={ items } 
+        maxCount="4"
+      />
     </div>
   );
 }
