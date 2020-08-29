@@ -3,7 +3,7 @@ import CollectionsItemList from '../CollectionsItemList';
 import { Link } from 'react-router-dom';
 import './index.scss';
 
-export default function CollectionsPreview({ data }) {
+export default function CollectionsPreview({ data, maxCount }) {
   const { title, items, routeName } = data;
 
   return (
@@ -13,7 +13,7 @@ export default function CollectionsPreview({ data }) {
       </h2>
       <CollectionsItemList 
         items={ items } 
-        maxCount="4"
+        maxCount={ maxCount }
       />
     </div>
   );
