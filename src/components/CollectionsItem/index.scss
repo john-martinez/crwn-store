@@ -1,3 +1,5 @@
+@import '../../styles/fonts';
+
 .collections-item {
   margin: 10px;
   flex-basis: 23%;
@@ -13,11 +15,58 @@
   &__image {
     width: auto;
     height: 300px;
+    position: relative;
 
     > img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      border: 1px solid black;
+    }
+
+    &:hover .collections-item__image-overlay {
+      opacity: 1;
+
+      & .collections-item__image-overlay-content {
+        bottom: 15px
+      }
+    }
+
+    &-overlay {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0,0,0,0.6);
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+      overflow: hidden;
+
+      &-content {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        transition: 0.3s ease-in-out;
+        
+        > button {
+          font-family: OpenSans;
+          font-size: 1.3rem;
+          width: 100%;
+          padding: 5px;
+          border: 1px solid black;
+          background-color: white;
+          cursor: pointer;
+          
+          &:hover {
+            background-color: black;
+            color: white;
+          }
+        }
+      }
     }
   }
 }
