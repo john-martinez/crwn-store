@@ -1,6 +1,8 @@
 .collections-item {
   margin: 10px;
-  width: 250px;
+  flex-basis: 23%;
+  min-width: 250px;
+  width: 23%;
 
   &__content {
     display: flex;
