@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputField from '../../components/InputField';
 import CustomButton from '../../components/CustomButton';
+import { signInWithGoogle } from '../../firebase/firebase.utils';
 import './index.scss';
 
 export default class SignInForm extends Component { 
@@ -22,26 +23,24 @@ export default class SignInForm extends Component {
         <h2>I already have an acconut</h2>
         <h3>Sign in with your email and password.</h3>
 
-        <form>
-          <InputField 
-            label="Email"
-            name="email"
-            type="email"
-            inputState={ email }
-            onChangeHandler={ onChangeHandler }
-          />
-          <InputField 
-            label="Password"
-            name="password"
-            inputState={ password }
-            onChangeHandler={ onChangeHandler }
-            type="password"
-          />
-          <div className="sign-in__button-container">
-            <CustomButton type="primary">Sign in</CustomButton>
-            <CustomButton type="secondary">Sign in with google</CustomButton>
-          </div>
-        </form>
+        <InputField 
+          label="Email"
+          name="email"
+          type="email"
+          inputState={ email }
+          onChangeHandler={ onChangeHandler }
+        />
+        <InputField 
+          label="Password"
+          name="password"
+          inputState={ password }
+          onChangeHandler={ onChangeHandler }
+          type="password"
+        />
+        <div className="sign-in__button-container">
+          <CustomButton buttonType="primary">Sign in</CustomButton>
+          <CustomButton onClick={ signInWithGoogle } buttonType="secondary">Sign in with google</CustomButton>
+        </div>
       </div>
     )
   }
