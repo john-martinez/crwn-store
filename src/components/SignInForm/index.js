@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import InputField from '../../components/InputField';
+import CustomButton from '../../components/CustomButton';
+import './index.scss';
 
 export default class SignInForm extends Component { 
   state = {
@@ -16,7 +18,7 @@ export default class SignInForm extends Component {
     const { onChangeHandler } = this;
 
     return(
-      <main className="sign-in">
+      <div className="sign-in">
         <h2>I already have an acconut</h2>
         <h3>Sign in with your email and password.</h3>
 
@@ -35,8 +37,12 @@ export default class SignInForm extends Component {
             onChangeHandler={ onChangeHandler }
             type="password"
           />
+          <div className="sign-in__button-container">
+            <CustomButton type="primary">Sign in</CustomButton>
+            <CustomButton type="secondary">Sign in with google</CustomButton>
+          </div>
         </form>
-      </main>
+      </div>
     )
   }
 }

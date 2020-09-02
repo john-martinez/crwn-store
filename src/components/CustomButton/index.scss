@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+
+.custom-button {
+  &--primary-btn {
+    @include primary-button;
+  }
+  
+  &--secondary-btn {
+    @include secondary-button;
+  }
+}

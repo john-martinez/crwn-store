@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputField from '../../components/InputField';
-
+import CustomButton from '../../components/CustomButton';
 export default class SignInForm extends Component { 
   state = {
     email: '',
@@ -49,7 +49,9 @@ export default class SignInForm extends Component {
             onChangeHandler={ onChangeHandler }
             type="password"
           />
-          <button>Click</button>
+          <div className="sign-in__button-container">
+            <CustomButton type="primary">Sign Up</CustomButton>
+          </div>
         </form>
       </main>
     )
