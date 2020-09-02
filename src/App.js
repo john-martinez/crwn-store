@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import DetailsPage from './pages/DetailsPage';
 import ShopPage from './pages/ShopsPage';
+import SignInPage from './pages/SignInPage';
 import Header from './components/Header';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/shop/:category" component={ ShopPage } />
         <Route path="/shop" component={ ShopPage } />
         <Route path="/details/:productId" component={ DetailsPage } />
+        <Route path="/signin" component={ SignInPage } />
       </Switch>
     </div>
   );

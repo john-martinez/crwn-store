@@ -17,6 +17,9 @@ const Header = ({ history }) => {
         <li>
           <Link to='/contact'>CONTACT</Link>
         </li>
+        <li>
+          <Link to='/signin'>SIGN IN</Link>
+        </li>
       </ul>
     </header>
   );
