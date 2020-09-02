@@ -50,7 +50,7 @@ export default class SignInForm extends Component {
             type="password"
           />
           <div className="sign-in__button-container">
-            <CustomButton type="primary">Sign Up</CustomButton>
+            <CustomButton buttonType="primary">Sign Up</CustomButton>
           </div>
         </form>
       </main>
