@@ -5,21 +5,25 @@ import DetailsPage from './pages/DetailsPage';
 import ShopPage from './pages/ShopsPage';
 import SignInPage from './pages/SignInPage';
 import Header from './components/Header';
-import { auth } from './firebase/firebase.utils';
+import { auth, firestore } from './firebase/firebase.utils';
 
 class App extends Component {
   state = { currentUser: null }
 
   componentDidMount() {
     auth.onAuthStateChanged(user => {
-      console.log(user);
       this.setState({ currentUser: user })
     })
+
+    const test = firestore.doc('/test/JCalSifQJzxNltADzXJX').get();
+    
+    test.then(data=>console.log(data))
   }
   render() {
+    const { currentUser } = this.state;
     return (
       <div>
-        <Header />
+        <Header currentUser={ currentUser } />
         <Switch>
           <Route exact path="/" component={ HomePage } />
           <Route path="/shop/:category" component={ ShopPage } />
