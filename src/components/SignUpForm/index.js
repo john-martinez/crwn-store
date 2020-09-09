@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputField from '../../components/InputField';
 import CustomButton from '../../components/CustomButton';
+import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 export default class SignInForm extends Component { 
   state = {
     email: '',
@@ -13,16 +14,32 @@ export default class SignInForm extends Component {
     this.setState({[name]: value })
   }
 
+  onSubmitHandler = async (e) => {
+    e.preventDefault();
+    const { email, password, confirmPassword, displayName } = this.state;
+
+    if (password === confirmPassword) {
+
+      const { user } = await auth.createUserWithEmailAndPassword(email, password)
+      
+      try {
+        createUserProfileDocument(user, { displayName })
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  }
+
   render() {
     const { email, password, confirmPassword, displayName } = this.state;
-    const { onChangeHandler } = this;
+    const { onChangeHandler, onSubmitHandler } = this;
 
     return(
       <main className="sign-in">
         <h2>I don't have an account</h2>
         <h3>Sign up with your email and password</h3>
         
-        <form>
+        <form onSubmit={ onSubmitHandler}>
           <InputField 
             label="Display Name"
             name="displayName"
@@ -50,7 +67,7 @@ export default class SignInForm extends Component {
             type="password"
           />
           <div className="sign-in__button-container">
-            <CustomButton buttonType="primary">Sign Up</CustomButton>
+            <CustomButton buttonType="primary" type="submit">Sign Up</CustomButton>
           </div>
         </form>
       </main>
